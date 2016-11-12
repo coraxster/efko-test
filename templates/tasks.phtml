@@ -1,4 +1,6 @@
-<table>
+<?=$this->fetch('_head.phtml')?>
+<?=$this->fetch('_menu.phtml');?>
+<table class="table table-hover">
     <thead>
         <tr>
             <th>Проблема</th>
@@ -20,3 +22,5 @@
     ?>
     </tbody>
 </table>
+
+<?=$this->fetch('_bottom.phtml')?>
