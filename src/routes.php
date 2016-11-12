@@ -7,10 +7,14 @@ $app->post('/login', '\controllers\loginController:loginAction')->setName('login
 $app->post('/logout', '\controllers\loginController:logoutAction')->setName('logoutAction');
 
 // Tasks
-$app->group('/', function() {
-    $this->get('tasks', '\controllers\taskController:tasksPage')->setName('tasksPage');
-    $this->post('add', '\controllers\taskController:addTask')->setName('taskAddAction');
-    $this->post('rate', '\controllers\taskController:rateTask')->setName('taskScoreAction');
+$app->group('/tasks', function() {
+    $this->get('[/]', '\controllers\taskController:tasksPage')->setName('tasksPage');
+
+    $this->post('/add', '\controllers\taskController:addTask')
+        ->setName('taskAddAction');
+
+    $this->post('/rate', '\controllers\taskController:rateTask')
+        ->setName('taskScoreAction');
 })->add( new \middlewares\SignInRequireMW() );
 
 
