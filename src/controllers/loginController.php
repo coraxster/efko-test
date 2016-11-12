@@ -67,6 +67,17 @@ class loginController
         return $response;
     }
 
+    /**
+     * @param Request $request
+     * @param Response $response
+     * @return Response
+     */
+    public function logoutAction(Request $request, Response $response){
+        unset($_SESSION['user_id']);
+        $response = $response->withRedirect('/login');
+        return $response;
+    }
+
 
 
 
