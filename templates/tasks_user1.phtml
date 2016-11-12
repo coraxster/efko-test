@@ -1,0 +1,44 @@
+<?=$this->fetch('_head.phtml')?>
+<?=$this->fetch('_menu.phtml');?>
+<table class="table table-hover tasks-list">
+    <thead>
+        <tr>
+            <th>Проблема</th>
+            <th>Решение</th>
+            <th>Оценка</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+    foreach ($tasks as $task){
+        ?>
+        <tr>
+            <td><?=htmlspecialchars($task->issue)?></td>
+            <td><?=htmlspecialchars($task->solution)?></td>
+            <td>
+                <input type="number" name="rate" data-max="5" data-min="1" value="<?=$task->rate?>" task-id="<?=$task->id?>" class="rating" data-readonly />
+            </td>
+        </tr>
+    <?php
+    }
+    ?>
+
+    </tbody>
+</table>
+<div class="row">
+    <div class="col-sm-1">
+    </div>
+    <div class="col-sm-4">
+        <textarea class="form-control" rows="3" placeholder="Проблема" name="issue"></textarea>
+    </div>
+    <div class="col-sm-4">
+        <textarea class="form-control" rows="3" placeholder="Решение" name="solution"></textarea>
+    </div>
+    <div class="col-sm-3">
+        <button class="btn btn-default" id="addIssue">Добавить</button>
+    </div>
+</div>
+
+
+
+<?=$this->fetch('_bottom.phtml')?>

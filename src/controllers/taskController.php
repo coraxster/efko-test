@@ -37,7 +37,8 @@ class taskController
      */
     public function tasksPage(Request $request, Response $response) {
         $content['tasks'] = task::all();
-        return $this->ci->renderer->render($response, 'tasks.phtml', $content);
+        $template = 'tasks_' . $request->getAttribute('user')->role . '.phtml';
+        return $this->ci->renderer->render($response, $template, $content);
     }
 
 
