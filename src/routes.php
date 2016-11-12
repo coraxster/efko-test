@@ -2,8 +2,8 @@
 // Routes
 
 // Login
-$app->get('/login', '')->setName('loginPage');
-$app->post('/login', '')->setName('loginAction');
+$app->get('/login', '\controllers\loginController:loginPage')->setName('loginPage');
+$app->post('/login', '\controllers\loginController:loginAction')->setName('loginAction');
 
 // Tasks
 $app->get('/', '\controllers\taskController:tasksPage')->setName('tasksPage');
