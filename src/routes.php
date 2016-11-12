@@ -1,10 +1,11 @@
 <?php
 // Routes
 
-$app->get('/[{name}]', function ($request, $response, $args) {
-    // Sample log message
-    $this->logger->info("Slim-Skeleton '/' route");
+// Login
+$app->get('/login', '')->setName('loginPage');
+$app->post('/login', '')->setName('loginAction');
 
-    // Render index view
-    return $this->renderer->render($response, 'index.phtml', $args);
-});
+// Tasks
+$app->get('/', '')->setName('tasksPage');
+$app->post('/add', '')->setName('taskAddAction');
+$app->post('/score', '')->setName('taskScoreAction');
