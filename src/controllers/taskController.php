@@ -70,16 +70,14 @@ class taskController
         try{
             $task = task::find($data['id']);
             $task->rate = $data['rate'];
-            $result = $task->save();
+            $task->save();
         }catch (\Exception $e){
             $this->ci->logger->warning('rateTask exception ' . $e->getMessage());
             $response->getBody()->write("error");
             return $response;
         }
-        if ($result){
-            $response->getBody()->write("ok");
-            return $response;
-        }
+        $response->getBody()->write("ok");
+        return $response;
     }
 
 
