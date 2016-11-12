@@ -5,4 +5,5 @@
 
 $container = $app->getContainer();
 
+$app->add(new \middlewares\UserInitMW());
 $app->add(new \middlewares\DbInitMW($container));

@@ -38,7 +38,7 @@ class loginController
      */
     public function loginPage(Request $request, Response $response) {
         if ($request->getAttribute('user')){
-            $response = $response->withRedirect('/');
+            $response = $response->withRedirect('/tasks');
             return $response;
         }
         return $this->ci->renderer->render($response, 'login.phtml');
@@ -63,7 +63,7 @@ class loginController
             $content['info'] = 'Пользователь не найден.';
             return $this->ci->renderer->render($response, 'login.phtml', $content);
         }
-        $response = $response->withRedirect('/');
+        $response = $response->withRedirect('/tasks');
         return $response;
     }
 
