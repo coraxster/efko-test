@@ -15,5 +15,16 @@ return [
             'path' => __DIR__ . '/../logs/app.log',
             'level' => \Monolog\Logger::DEBUG,
         ],
+        'db' => [
+            'driver' => 'mysql',
+            'host' => 'db',
+            'database' => 'efko',
+            'username' => 'root',
+            'password' => '12345678',
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'options'   => array(),
+        ],
     ],
 ];
