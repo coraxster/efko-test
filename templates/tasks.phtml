@@ -1,0 +1,22 @@
+<table>
+    <thead>
+        <tr>
+            <th>Проблема</th>
+            <th>Решение</th>
+            <th>Оценка</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+    foreach ($tasks as $task){
+        ?>
+        <tr>
+            <td><?=htmlspecialchars($task->issue)?></td>
+            <td><?=htmlspecialchars($task->solution)?></td>
+            <td><?=htmlspecialchars($task->score)?></td>
+        </tr>
+    <?php
+    }
+    ?>
+    </tbody>
+</table>
